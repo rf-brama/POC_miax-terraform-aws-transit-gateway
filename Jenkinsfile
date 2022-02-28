@@ -34,9 +34,8 @@ pipeline {
         stage('Terraform plan----') {
             steps {
                sh '/usr/local/bin/terraform plan -refresh=true -lock=false'
-            } steps{
-              params.AWS-REGION  
-            }
+               params.AWS-REGION 
+            } //steps
         }  //stage
         
         stage('Action confirmation') {
