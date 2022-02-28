@@ -2,7 +2,6 @@ pipeline {
     agent any
     parameters { 
       choice(name: 'Environment', choices: ['dev', 'qa', 'prod'], description: 'Select the environment to use')
-      choice(name: 'AWS-REGION', choices: ['us-east-1', 'us-west-2'], description: 'Select the action to use')
       choice(name: 'Action', choices: ['', 'plan-apply', 'destroy'], description: 'Select the action to use')
     }
     stages{
@@ -34,7 +33,6 @@ pipeline {
         stage('Terraform plan----') {
             steps {
                sh '/usr/local/bin/terraform plan -refresh=true -lock=false'
-               params.AWS-REGION 
             } //steps
         }  //stage
         
