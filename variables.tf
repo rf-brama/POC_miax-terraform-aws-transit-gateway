@@ -133,7 +133,6 @@ variable "ram_resource_share_arn" {
   type        = string
   default     = ""
 }
-
 variable "region" {
   description = "region"
   default = "us-east-1"
